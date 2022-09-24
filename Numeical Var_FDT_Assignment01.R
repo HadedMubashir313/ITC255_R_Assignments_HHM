@@ -40,4 +40,5 @@ for(a in 1:length(irisData$petal_length) ) {
 newVar = cbind(irisData$petal_length,newCat)
 head(irisData)
 View(newVar)
+#The distirbution table
 FDT(newCat)
