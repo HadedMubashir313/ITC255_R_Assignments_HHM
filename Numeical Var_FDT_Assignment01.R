@@ -27,7 +27,7 @@ FDT(irisData$sepal_width)
 newCat = c ()
 summary(irisData)
 
-for(a in 1:length(irisData$petal_length) ) {
+for(a in 1:length(irisData$sepal_width) ) {
   if(irisData$sepal_width[a]<=2){
     newCat[a]="Small"
   }else if(irisData$sepal_width[a]>2 &  irisData$sepal_width[a]<=3){
