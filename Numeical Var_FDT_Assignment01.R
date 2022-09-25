@@ -27,18 +27,20 @@ FDT(irisData$sepal_width)
 newCat = c ()
 summary(irisData)
 
-for(a in 1:length(irisData$petal_length) ) {
+for(a in 1:length(irisData$sepal_width) ) {
   if(irisData$sepal_width[a]<=2){
-    newCat[a]="Small"
+    newCat[a]="Small Digit"
   }else if(irisData$sepal_width[a]>2 &  irisData$sepal_width[a]<=3){
-    newCat[a]="medium "
+    newCat[a]="medium Digit "
   }else {
-    newCat[a]="large"
+    newCat[a]="large Digit"
   }
 }
 
-newVar = cbind(irisData$petal_length,newCat)
-head(irisData)
-View(newVar)
-#The distirbution table
+    newVar = cbind(irisData$petal_length,newCat)
+    
+    head(irisData)
+    View(newVar)
+
+    #The distribution table
 FDT(newCat)
