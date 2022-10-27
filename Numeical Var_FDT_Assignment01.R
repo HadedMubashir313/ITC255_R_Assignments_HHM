@@ -44,3 +44,22 @@ for(a in 1:length(irisData$sepal_width) ) {
 
     #The distribution table
 FDT(newCat)
+
+
+
+x=c(2,-1,0)
+
+y=c()
+
+for (i in 1:3){
+  
+  
+  y[k]=x[k]+1
+  
+}
+
+print(y)
+
+x=seq(1:10)
+y= !(x>=2) 
+y
