@@ -40,7 +40,7 @@ summarise (myData, mean(age))
 
 
 ageGroup=c()
-for(k, in 1:lenght(myData$age)){
+for(k in 1:lenght(myData$age)){
   if(myData$age[k]<35){
     ageGroup[k]="Young"
   } else if (myDataset$age[k] >=35 & myDataset$age[k]<50) {
