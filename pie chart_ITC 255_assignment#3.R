@@ -42,3 +42,34 @@ age_tabel = FDT(myData$age_group)[,2]
 age_tabel
 
 pie (age_tabel, col = c ("red", "pink", "yellow") , main = "smoker Distribution", cex = 0.6)
+
+gender=c()
+for(k in 1:length(myData$male)){
+  if(myData$male[k]==0){
+    gender[k]="Female"
+  } else{
+    gender[k]="Male"
+  }
+}
+
+cbind(myData$male, gender)
+myData$Gender = gender
+head(myData)
+
+#Pie chart using ggplot2
+
+library(ggplot2)
+FDT_Age = table(myData$male)
+FDT_Age = as.data.frame(FDT_Age)
+colnames(FDT_Age)=c("age","Count")
+FDT_Age
+
+
+g0 =  ggplot(fdtGender, aes(x= "", y = Count, fill=Gender))
+g1 = g0+geom_col()+
+  coord_polar(theta = "y")+
+  theme_bw()+
+  theme(plot.title=element_text
+        (color = "red", hjust= .5, size=10))+
+  ggtitle('Gender distribution')+theme(legend.position = "bottom")
+g1
