@@ -18,30 +18,30 @@ time_spent_studying_per_day = abs(round(rnorm (1000, 4, 1.5),2))
 #now we will be running the regression model on the sample data that we have gathered from 1000 people
 #as the X and Y are linearly accosiated, we use the linear function to express the relationship. Y = a+bx
 # we are looking for p-value, ahat, and bhat to make inferences .
-
+#
 
 stu_grade_estimation = data.frame(Grade = securing_A, Studying_time = time_spent_studying_per_day)
 
-liner_model = lm(stu_grade_estimation$Studying_time~stu_grade_estimation$Grade)
+liner_model = glm(stu_grade_estimation$Grade~stu_grade_estimation$Studying_time, family = 'binomial')
 summary (liner_model)
 
 #OBSERVATIONS:
 
 #The population model is as follow:  y = a + bX 
-# Y = 4.03 -0.17X
-# The coefficient of X,  b = -0.17 which is less than 0
+# Y = -1.3 -0.02X
+# The coefficient of X,  b = -0.02 which is less than 0
 # bhat<0 indicates that there is an indirect affect of 
 #  X (amount of time spent studying) on Y (Securing Grade A)
 
 #H0 says b=0  meaning that there is no effect Time spent studying on Securing grad A
 #H1 says b>0 meaning that there is direct relationship between  Time spent studying and Securing A 
 
-#Making inference: alpha= 0.05 while p-value = 0.1454
+#Making inference: alpha= 0.05 while p-value = 0.704
 #p-value>Alpha
 
-#Hence we reject H1 in favor of H0
-# ahat = 4.0 : Y = 4 - 0.17X
-
+#Hence we do not reject H0.
+# ahat = -1.3 :Y = -1.3 -0.02X
+#
 #_____________________________________________________________________________
 
 #Two way table (FDT)
